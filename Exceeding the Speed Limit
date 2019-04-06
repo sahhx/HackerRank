@@ -1,0 +1,21 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the solve function below.
+def solve(s):
+    if s > 110:
+        print((s-90)*500,"License removed")
+    elif s > 90:
+        print((s-90)*300,"Warning")
+    else:
+        print(0,"No punishment")
+
+if __name__ == '__main__':
+    s = int(input().strip())
+
+    solve(s)
