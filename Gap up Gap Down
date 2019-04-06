@@ -1,0 +1,26 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the solve function below.
+def solve(low, high, close):
+    gap_up = []
+    gap_down = []
+    gap_up = [1 if low[i] > close[i-1] else 0 for i in range(1,len(low))]
+    gap_down = [1 if high[i] < close[i-1] else 0 for i in range(1,len(low))]
+    print(sum(gap_up),sum(gap_down))
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    low = list(map(int, input().rstrip().split()))
+
+    high = list(map(int, input().rstrip().split()))
+
+    close = list(map(int, input().rstrip().split()))
+
+    solve(low, high, close)
